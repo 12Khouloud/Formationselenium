@@ -24,9 +24,9 @@ public class Mouseover {
 				//Webelement
 				WebElement menu ; 
 				WebElement menu1;
-				menu1=driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a"));
+				menu=driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a"));
 				Actions action=new Actions(driver);
-				action.moveToElement(menu1).perform();
+				action.moveToElement(menu).perform();
 				System.out.println("test ok");
 				menu1 =driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li[3]/a"));
 				action.moveToElement(menu1).perform();

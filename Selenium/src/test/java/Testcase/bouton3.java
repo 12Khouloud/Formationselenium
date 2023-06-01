@@ -1,4 +1,4 @@
-package testcase;
+package Testcase;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 
 
-public class Fonctionclick {
+public class bouton3 {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "src/test/ressources/chromedriver.exe");
