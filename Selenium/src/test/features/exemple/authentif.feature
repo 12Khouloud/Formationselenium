@@ -3,7 +3,7 @@ Feature: cas de test authenfication
 
   @tag1
   Scenario Outline: Authentification cas passant et non passant
-    Given ouvrir Chrome
+    Given ouvrir chrome
     And ouvrir URL application "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     When saisir "<user>" dans le login
     And saisir "<mdp>" dans mot de passe

@@ -17,9 +17,9 @@ public class authentificaorange {
 
 	WebDriver driver ;
 
-	@Given("ouvrir Chrome")
+	@Given("ouvrir chrome")
 	public void ouvrir_chrome() {
-	    System.setProperty("webdriver.chrome.driver", "src/test/ressources/chromedriver.exe");
+	    System.setProperty("webdriver.chrome.driver", "src/test/ressource/chromedriver.exe");
 	    driver = new ChromeDriver();
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
