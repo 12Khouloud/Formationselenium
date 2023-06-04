@@ -12,5 +12,5 @@ Feature: Assurance auto
     And cliquer sur le bouton rechercher par plaque
     And remplir le champ plaque d immatriculation "DQ326HS"
     And cliquer sur le bouton confirmer
-    Then verifier le resultat obtenu "<resultat>"
+    Then verifier le resultat obtenu "SEAT LEON"
     

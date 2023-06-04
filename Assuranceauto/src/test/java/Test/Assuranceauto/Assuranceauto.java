@@ -1,23 +1,18 @@
 package Test.Assuranceauto;
 
 import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Assuranceauto {
-
-	
-	     WebDriver  driver;
-	     
-	     @Given("ouvrir navigateur chrome")
+         WebDriver  driver;
+	      @Given("ouvrir navigateur chrome")
 		public void ouvrir_navigateur_chrome() {
 			System.setProperty("webdriver.chrome.driver","src/test/java/src/test/resspirce/chromedriver.exe");
 			
@@ -25,7 +20,7 @@ public class Assuranceauto {
 			
 			driver.manage().window().maximize();
 			
-			driver.get("https://fr-fr.facebook.com/");
+			
 			driver.manage().deleteAllCookies();
 			
 			driver.manage().timeouts().implicitlyWait(6,TimeUnit.SECONDS);
@@ -36,8 +31,13 @@ public class Assuranceauto {
 	     }
 				
 		@Given("ouvrir URL {string}")
-		public void ouvrir_url(String string) {
+		public void ouvrir_url(String string) throws InterruptedException {
 			driver.get(string);
+			Thread.sleep(5000);
+             WebElement cookies ;
+			
+			cookies=driver.findElement(By.id("axeptio_btn_acceptAll"));
+			cookies.click();
 			
 		   
 		}
@@ -83,10 +83,10 @@ public class Assuranceauto {
 		   
 		}
 
-		@Then("verifier le resultat obtenu")
+		@Then("verifier le resultat obtenu {string}")
 		public void verifier_le_resultat_obtenu (String string) { 
 			WebElement vehicule ;
-			vehicule =driver.findElement(By.xpath("//h5[normalize-space()='SEAT LEON']"));
+			vehicule =driver.findElement(By.xpath("//h5[contains(@class,'')]"));
 			String text;
 	    	text = vehicule.getText();
 	    	Assert.assertEquals(text, string);
